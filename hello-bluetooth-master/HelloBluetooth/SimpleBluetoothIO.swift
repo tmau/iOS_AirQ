@@ -5,6 +5,7 @@ protocol SimpleBluetoothIODelegate: class {
 }
 
 
+
 class SimpleBluetoothIO: NSObject {
     let serviceUUID: String
     weak var delegate: SimpleBluetoothIODelegate?
@@ -44,11 +45,11 @@ class SimpleBluetoothIO: NSObject {
 	
 	@objc func readData()
 	{
-//		connectedPeripheral?.readValue(for: readableCharacteristic!)
+		connectedPeripheral?.readValue(for: readableCharacteristic!)
 		let data = readableCharacteristic?.value
-//		print(data!.int8Value())
+		print(data!.int8Value())
 		self.delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data!.int8Value())
-//		self.postAirQData()
+	//	self.postAirQData()
 	}
 
 }
@@ -126,7 +127,7 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
 					print(myValue)
 					self.delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data!.int8Value())
 					readableCharacteristic = characteristic
-					timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(readData), userInfo: nil, repeats: true)
+					timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(readData), userInfo: nil, repeats: true)
 				}
 			}
 			if characteristic.properties.contains(.write) || characteristic.properties.contains(.writeWithoutResponse) {

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 		checkLocationAuthorizationStatus() //add
 		updateLocation() //add
         simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "F0001110-0451-4000-B000-000000000000", delegate: self)
+//		simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "F000ABBA-0451-4000-B000-000000000000", delegate: self)
     }
 //	F000ABBA-0451-4000-B000-000000000000
 //	19B10010-E8F2-537E-4F6C-D104768A1214
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
 		print(data)
 		print("STRING FORMAT IS: ")
 		print((String(format: "%d", (data))))
+//		let parameters = ["value": "\(String(format: "%d", (data)))"]
 		let parameters = ["value": "\(String(format: "%d", (data)))", "lat": "\(String(format: "%f", (locationManager.location?.coordinate.latitude)!))", "lon": "\(String(format: "%f", (locationManager.location?.coordinate.longitude)!))"]
 		guard let url = URL(string: "https://io.adafruit.com/api/feeds/data/data.json?X-AIO-Key=8250e91368af4527b937c436afe799a1") else { return }
 		print(parameters)
@@ -111,6 +113,8 @@ class ViewController: UIViewController {
 extension ViewController: SimpleBluetoothIODelegate {
 //	func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: UInt8, temp: UInt8, humid: UInt8)
 	func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: UInt8){
+		
+		
         if simpleBluetoothIO.connectedPeripheral?.state == CBPeripheralState.connected  {
 			self.Connected.title = String.init("Connected")
         } else {

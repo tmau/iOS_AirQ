@@ -20,9 +20,48 @@ extension Data {
     }
 
     func int8Value() -> UInt8 {
-		if (self == nil) {
-			return 0
-		}
-		return UInt8(bitPattern: Int8(self[0]))
+		
+		var temp = UInt8(self[0])
+		return temp;
+//		if (temp >= 128) {
+//			return temp
+//		}
+//
+//		do {
+//			print("HELP")
+//		//	return UInt
+//			return try UInt8(bitPattern: Int8(self[0]))
+//			print("Success!")
+//
+//		} catch {
+//			print("error")
+//			return 1
+//		}
+//		return UInt8(self[0])
+	
+		
+//		self.count
+//		if (self == nil) {
+//			return 0
+//		}
+//
+//
+//		return UInt8(bitPattern: Int8(self[0]))
+		
+//		if (self.count <= 0) {
+//			return 1
+//		}
+//		return UInt8(bitPattern: Int8(self[0]))
+//
+//		do {
+//			do {
+//				try UInt8(self[0])
+//				print("Success!")
+//			}
+//		} catch {
+//			print("error")
+//			return -1
+//		}
+//		return UInt8(self[0])
     }
 }
