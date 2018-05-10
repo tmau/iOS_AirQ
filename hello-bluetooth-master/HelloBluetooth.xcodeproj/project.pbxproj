@@ -14,6 +14,12 @@
 		113FB630207DE6AD0022AB34 /* Button_Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 113FB62F207DE6AD0022AB34 /* Button_Box.png */; };
 		116ABFE1207E732800B3F0E8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116ABFE0207E732800B3F0E8 /* MapViewController.swift */; };
 		116ABFE3207E737200B3F0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116ABFE2207E737200B3F0E8 /* Main.storyboard */; };
+		116DB6CF20A4356800E7C80D /* Ring6.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6C920A4356700E7C80D /* Ring6.png */; };
+		116DB6D020A4356800E7C80D /* Ring1.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6CA20A4356700E7C80D /* Ring1.png */; };
+		116DB6D120A4356800E7C80D /* Ring3.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6CB20A4356700E7C80D /* Ring3.png */; };
+		116DB6D220A4356800E7C80D /* Ring2.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6CC20A4356700E7C80D /* Ring2.png */; };
+		116DB6D320A4356800E7C80D /* Ring4.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6CD20A4356700E7C80D /* Ring4.png */; };
+		116DB6D420A4356800E7C80D /* Ring5.png in Resources */ = {isa = PBXBuildFile; fileRef = 116DB6CE20A4356800E7C80D /* Ring5.png */; };
 		11EA3F4B207DED54008F8584 /* Air Quality Graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3F4A207DED54008F8584 /* Air Quality Graph.png */; };
 		11EA3F4D207DEECF008F8584 /* Back Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3F4C207DEECF008F8584 /* Back Arrow.png */; };
 		11EA3F53207DF00C008F8584 /* Air Quality Map.png in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3F52207DF00C008F8584 /* Air Quality Map.png */; };
@@ -36,6 +42,12 @@
 		113FB62F207DE6AD0022AB34 /* Button_Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button_Box.png; sourceTree = "<group>"; };
 		116ABFE0207E732800B3F0E8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		116ABFE2207E737200B3F0E8 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		116DB6C920A4356700E7C80D /* Ring6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring6.png; sourceTree = "<group>"; };
+		116DB6CA20A4356700E7C80D /* Ring1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring1.png; sourceTree = "<group>"; };
+		116DB6CB20A4356700E7C80D /* Ring3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring3.png; sourceTree = "<group>"; };
+		116DB6CC20A4356700E7C80D /* Ring2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring2.png; sourceTree = "<group>"; };
+		116DB6CD20A4356700E7C80D /* Ring4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring4.png; sourceTree = "<group>"; };
+		116DB6CE20A4356800E7C80D /* Ring5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ring5.png; sourceTree = "<group>"; };
 		11EA3F4A207DED54008F8584 /* Air Quality Graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Air Quality Graph.png"; sourceTree = "<group>"; };
 		11EA3F4C207DEECF008F8584 /* Back Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back Arrow.png"; sourceTree = "<group>"; };
 		11EA3F52207DF00C008F8584 /* Air Quality Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Air Quality Map.png"; sourceTree = "<group>"; };
@@ -82,6 +94,12 @@
 		80106FA21C94CDA500B5BB19 /* HelloBluetooth */ = {
 			isa = PBXGroup;
 			children = (
+				116DB6CA20A4356700E7C80D /* Ring1.png */,
+				116DB6CC20A4356700E7C80D /* Ring2.png */,
+				116DB6CB20A4356700E7C80D /* Ring3.png */,
+				116DB6CD20A4356700E7C80D /* Ring4.png */,
+				116DB6CE20A4356800E7C80D /* Ring5.png */,
+				116DB6C920A4356700E7C80D /* Ring6.png */,
 				11EA3F52207DF00C008F8584 /* Air Quality Map.png */,
 				11EA3F4A207DED54008F8584 /* Air Quality Graph.png */,
 				11EA3F4C207DEECF008F8584 /* Back Arrow.png */,
@@ -168,16 +186,22 @@
 			files = (
 				11F43EF320428F3200AA7F9E /* Thermometer-50-512.png in Resources */,
 				11EA3F53207DF00C008F8584 /* Air Quality Map.png in Resources */,
+				116DB6CF20A4356800E7C80D /* Ring6.png in Resources */,
 				113FB630207DE6AD0022AB34 /* Button_Box.png in Resources */,
 				80106FB61C94CE4C00B5BB19 /* ViewController.xib in Resources */,
+				116DB6D120A4356800E7C80D /* Ring3.png in Resources */,
 				11F43EED20428D5A00AA7F9E /* Humidity-icon.png in Resources */,
 				113FB62E207DE1570022AB34 /* Red Ring.png in Resources */,
+				116DB6D220A4356800E7C80D /* Ring2.png in Resources */,
+				116DB6D420A4356800E7C80D /* Ring5.png in Resources */,
 				11EA3F4D207DEECF008F8584 /* Back Arrow.png in Resources */,
 				116ABFE3207E737200B3F0E8 /* Main.storyboard in Resources */,
 				11EA3F4B207DED54008F8584 /* Air Quality Graph.png in Resources */,
 				113FB62D207DE1570022AB34 /* Green Ring.png in Resources */,
 				80106FB81C94D02F00B5BB19 /* LaunchScreen.xib in Resources */,
 				80106FAB1C94CDA500B5BB19 /* Assets.xcassets in Resources */,
+				116DB6D320A4356800E7C80D /* Ring4.png in Resources */,
+				116DB6D020A4356800E7C80D /* Ring1.png in Resources */,
 				113FB62C207DE1570022AB34 /* Orange Ring.png in Resources */,
 				113FB62B207DE1570022AB34 /* Yellow Ring.png in Resources */,
 			);

@@ -24,7 +24,10 @@ class SimpleBluetoothIO: NSObject {
 	
 
         centralManager = CBCentralManager(delegate: self, queue: nil)
-    }
+		timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) {
+			(timer) in self.readData()
+		}
+	}
 
     func writeValue(value: Int8) {
 		print (connectedPeripheral)
@@ -45,13 +48,21 @@ class SimpleBluetoothIO: NSObject {
 	
 	@objc func readData()
 	{
+		if (connectedPeripheral == nil) {
+			return
+		}
+		if readableCharacteristic == nil {
+			return
+		}
 		connectedPeripheral?.readValue(for: readableCharacteristic!)
 		let data = readableCharacteristic?.value
 		print(data!.int8Value())
 		self.delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data!.int8Value())
 	//	self.postAirQData()
 	}
-
+//	func startTimer() { 	let timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { (timer) in self.delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: 100)
+//			}
+//	}
 }
 
 extension SimpleBluetoothIO: CBCentralManagerDelegate {
@@ -126,8 +137,13 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
 				if let myValue = data?.int8Value(){
 					print(myValue)
 					self.delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data!.int8Value())
+					
 					readableCharacteristic = characteristic
-					timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(readData), userInfo: nil, repeats: true)
+						
+//					if (readableCharacteristic == nil) { // ONLY INITIALIZE TIMER ONCE
+//						readableCharacteristic = characteristic
+//						timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(readData), userInfo: nil, repeats: true)
+//					}
 				}
 			}
 			if characteristic.properties.contains(.write) || characteristic.properties.contains(.writeWithoutResponse) {
@@ -142,7 +158,7 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
             return
         }
 
-        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.int8Value())
+//        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.int8Value())
     }
 	
 

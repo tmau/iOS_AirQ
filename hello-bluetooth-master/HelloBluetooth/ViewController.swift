@@ -15,6 +15,10 @@ class ViewController: UIViewController {
 		self.simpleBluetoothIO.centralManager.connect(self.simpleBluetoothIO.connectedPeripheral!, options: nil)
 	}
 	
+	@IBOutlet var ringView: UIImageView!
+	@IBOutlet var Level: UILabel!
+	@IBOutlet var Description: UILabel!
+	
 	@IBOutlet var humid: UILabel!
 	@IBOutlet var temp: UILabel!
 	
@@ -23,6 +27,7 @@ class ViewController: UIViewController {
 		checkLocationAuthorizationStatus() //add
 		updateLocation() //add
         simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "F0001110-0451-4000-B000-000000000000", delegate: self)
+//		simpleBluetoothIO.startTimer()
 //		simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "F000ABBA-0451-4000-B000-000000000000", delegate: self)
     }
 //	F000ABBA-0451-4000-B000-000000000000
@@ -71,8 +76,8 @@ class ViewController: UIViewController {
 		print(data)
 		print("STRING FORMAT IS: ")
 		print((String(format: "%d", (data))))
-//		let parameters = ["value": "\(String(format: "%d", (data)))"]
-		let parameters = ["value": "\(String(format: "%d", (data)))", "lat": "\(String(format: "%f", (locationManager.location?.coordinate.latitude)!))", "lon": "\(String(format: "%f", (locationManager.location?.coordinate.longitude)!))"]
+		let parameters = ["value": "10"]
+//		let parameters = ["value": "\(String(format: "%d", (data)))", "lat": "\(String(format: "%f", (locationManager.location?.coordinate.latitude)!))", "lon": "\(String(format: "%f", (locationManager.location?.coordinate.longitude)!))"]
 		guard let url = URL(string: "https://io.adafruit.com/api/feeds/data/data.json?X-AIO-Key=8250e91368af4527b937c436afe799a1") else { return }
 		print(parameters)
 		
@@ -121,6 +126,43 @@ extension ViewController: SimpleBluetoothIODelegate {
 			self.Connected.title = String.init("Reconnected")
         }
 		self.AirQData.text = String.init(format: "%d ", arguments: [value])
+		if (value < 50)
+		{
+			self.ringView.image = #imageLiteral(resourceName: "Ring1.png")
+			self.Level.text = "Good"
+			self.Description.text = "Air quality is satisfactory, and air pollution poses little or no risk."
+		}
+		else if (value >= 51 && value < 100)
+		{
+			self.ringView.image = #imageLiteral(resourceName: "Ring2.png")
+			self.Level.text = "Moderate"
+			self.Description.text = "Air quality is acceptable; for some pollutants there may be a moderate health concern."
+		}
+		else if (value >= 101 && value < 150)
+		{
+			self.ringView.image = #imageLiteral(resourceName: "Ring3.png")
+			self.Level.text = "Unhealthy for Sensitive Groups"
+			self.Description.text = "Members of sensitive groups may experience health effects. The general public is not likely to be affected."
+		}
+		else if (value >= 151 && value < 200)
+		{
+			self.ringView.image = #imageLiteral(resourceName: "Ring4.png")
+			self.Level.text = "Unhealthy"
+			self.Description.text = "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects."
+		}
+		else if (value >= 201)
+		{
+			self.ringView.image = #imageLiteral(resourceName: "Ring5.png")
+			self.Level.text = "Unhealthy"
+			self.Description.text = "Health alert: everyone may experience more serious health effects."
+		}
+//		else if (value >= 301 && value < 500)
+//		{
+//			self.ringView.image = #imageLiteral(resourceName: "Ring6.png")
+//		}
+		
+		
+		
 //		self.humid.text = String.init(format: "%d ", arguments: [temp])
 //		self.temp.text = String.init(format: "%d ", arguments: [humid])
 		

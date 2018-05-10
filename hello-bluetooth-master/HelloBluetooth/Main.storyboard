@@ -69,7 +69,7 @@
                                 <rect key="frame" x="285" y="584" width="75" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="85˚F">
+                                    <fragment content="72˚F">
                                         <attributes>
                                             <color key="NSColor" red="0.039215686274509803" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="30" name=".SFNSDisplay"/>
@@ -91,7 +91,7 @@
                                     <action selector="pressedReconnectButton:" destination="gCB-KB-hSc" eventType="touchUpInside" id="nNJ-Fq-vnJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="48%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcF-Tp-Wmq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="46%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcF-Tp-Wmq">
                                 <rect key="frame" x="-8" y="584" width="140" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
@@ -152,7 +152,10 @@
                     <connections>
                         <outlet property="AirQData" destination="wrj-eC-03R" id="Rzf-Fb-k7l"/>
                         <outlet property="Connected" destination="E4d-iE-nY2" id="bKu-uB-VRd"/>
+                        <outlet property="Description" destination="gzC-l9-jPB" id="xnZ-B7-Ffl"/>
+                        <outlet property="Level" destination="Sut-Cp-IgO" id="Gwq-w1-qjo"/>
                         <outlet property="humid" destination="rcF-Tp-Wmq" id="ZCb-qL-ZcV"/>
+                        <outlet property="ringView" destination="EdL-TM-4dp" id="s61-cw-pwZ"/>
                         <outlet property="temp" destination="Yc8-Mj-9rC" id="slZ-mq-NTa"/>
                     </connections>
                 </viewController>
